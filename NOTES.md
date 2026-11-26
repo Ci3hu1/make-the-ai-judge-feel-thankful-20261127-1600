@@ -42,19 +42,22 @@ after round 1.
 ## Build / check status (v1, ready for Setuju — NOT submitted)
 
 - Repo: https://github.com/Ci3hu1/make-the-ai-judge-feel-thankful-20261127-1600
-- Commit: d827fc1353e637be8abfcf65ec34e94560e770b6 (pushed, URL verified HTTP 200)
+- Commit: 7679833ebd8937b7842ce453bc9253fd10314267 (pushed; entry identical to d827fc1, NOTES.md only)
 - Kit check: 14 passed, 0 failed, 5 skipped, 5 checked at submission
   ("ok: every check run here passes"). First check failed thinking_revised
   (main.py written in one message); fixed with a genuine read-back
   verification edit, re-bundled, re-checked — now passes.
-- Bundle: ~/workspace/tools/makefun/make-the-ai-judge-feel-thankful-20261127-1600-kit/transcripts.tar.gz
-  — 942,232 bytes, sha256 90f5bf9293b67af045e2c1bbcf1d070f3a0fd5d5dde9a2c82f5a32b35a120012
+- Bundle (re-bundled by parent 05:18 WIB 27 Nov, after builder finished):
+  ~/workspace/tools/makefun/make-the-ai-judge-feel-thankful-20261127-1600-kit/transcripts.tar.gz
+  — 987,557 bytes, sha256 64544eb9691d83e71f56c06108763966b391c5578ae000de17646bf3f08460ad
+- Usage rows: 2 attached (builder cc4d3f38 + parent 2cd0e091), from muse.db SELECT;
+  file ~/.makefun/muse-usage-make-the-ai-judge-feel-thankful-20261127-1600.jsonl.
+  thinking_priced passes with 2 usage records.
 - No missing-parent warning: parent session 2cd0e091 was found and included.
-- **Before submit, parent MUST re-run the usage SELECT and re-bundle:**
-  this bundle carries only 1 usage row (the parent session's); the builder
-  subagent's own usage row is written only when its run completes, so it
-  could not be attached yet. thinking_priced passed locally with 1 record,
-  but re-bundle after this run ends to attach both sessions' rows.
+- Kit check re-run on final commit 7679833e: 14 passed, 0 failed, 5 skipped,
+  5 checked at submission ("ok: every check run here passes").
+- Repo owner verified: account github_login is ci3hu1 (GET /api/me, 05:19 WIB),
+  so repo_owner passes at submission without .makefun/owner.json.
 - grade-local not run: competition's `reproduce` is null (server-only
   grading). Verified instead by running main.py with plain python3 and the
   unit tests (2 passed).
