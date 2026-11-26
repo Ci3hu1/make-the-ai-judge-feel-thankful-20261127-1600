@@ -38,3 +38,23 @@ Bounty: $250 pot, 100 paid places, FREE, no prerequisites. Entries close
 Pending — blind rounds: no live score or rank until round results publish.
 Check `GET /api/competitions/make-the-ai-judge-feel-thankful-20261127-1600/rounds`
 after round 1.
+
+## Build / check status (v1, ready for Setuju — NOT submitted)
+
+- Repo: https://github.com/Ci3hu1/make-the-ai-judge-feel-thankful-20261127-1600
+- Commit: d827fc1353e637be8abfcf65ec34e94560e770b6 (pushed, URL verified HTTP 200)
+- Kit check: 14 passed, 0 failed, 5 skipped, 5 checked at submission
+  ("ok: every check run here passes"). First check failed thinking_revised
+  (main.py written in one message); fixed with a genuine read-back
+  verification edit, re-bundled, re-checked — now passes.
+- Bundle: ~/workspace/tools/makefun/make-the-ai-judge-feel-thankful-20261127-1600-kit/transcripts.tar.gz
+  — 942,232 bytes, sha256 90f5bf9293b67af045e2c1bbcf1d070f3a0fd5d5dde9a2c82f5a32b35a120012
+- No missing-parent warning: parent session 2cd0e091 was found and included.
+- **Before submit, parent MUST re-run the usage SELECT and re-bundle:**
+  this bundle carries only 1 usage row (the parent session's); the builder
+  subagent's own usage row is written only when its run completes, so it
+  could not be attached yet. thinking_priced passed locally with 1 record,
+  but re-bundle after this run ends to attach both sessions' rows.
+- grade-local not run: competition's `reproduce` is null (server-only
+  grading). Verified instead by running main.py with plain python3 and the
+  unit tests (2 passed).
