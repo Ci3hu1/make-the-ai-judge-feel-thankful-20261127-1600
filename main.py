@@ -34,6 +34,14 @@ def main() -> None:
     os.chmod(OUTPUT_PATH, 0o644)
     os.chmod(out_dir, 0o755)
 
+    # Read back what was actually written and re-validate it: the gate reads
+    # the file, not our in-memory string, so a write that silently truncated
+    # or mangled the text must fail here, not on the server.
+    with open(OUTPUT_PATH, "rb") as f:
+        written = f.read().decode("utf-8")
+    assert written == text, "entry.txt on disk differs from the entry text"
+    assert 1 <= len(written) <= 1000, f"entry must be 1-1000 chars, got {len(written)}"
+
 
 if __name__ == "__main__":
     main()
