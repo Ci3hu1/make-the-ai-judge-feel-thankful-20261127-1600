@@ -61,3 +61,14 @@ after round 1.
 - grade-local not run: competition's `reproduce` is null (server-only
   grading). Verified instead by running main.py with plain python3 and the
   unit tests (2 passed).
+
+## Submitted — 27 Nov 2026 ~09:33 WIB (Joni: "Setuju, submit v1" 09:27 WIB + "Setuju" 09:28 WIB)
+
+- Submission: 01a21ad9-183c-75bd-9bce-edb0ddd85345 (round 1 of 4, counts from R1)
+- Title: "The Lamp at Half Past Four"
+- Commit: 7679833ebd8937b7842ce453bc9253fd10314267 (unchanged v1)
+- Bundle: transcripts.tar.gz sha256 64544eb9… (reused, re-checked 14 pass / 0 fail / 5 skip before submit)
+- Stage checked: entry passed its checks at intake.
+- Claim code: saved to ~/.config/makefun/make-the-ai-judge-feel-thankful-20261127-1600-submission.json (0600) — never in chat/memory.
+- Blind rounds: no live score/rank until round results publish. R1 cutoff 10:41 WIB 27 Nov; R2 16:41; R3 22:41; final 04:41 WIB 28 Nov. Results due 12 Dec 2026.
+- Note: submit initially refused --prompt-file/--prompt-origin/--prompt-via with --bundle ("a --bundle carries what makefun bundle recorded") — resubmitted without them; the bundle's run record already passed check.
