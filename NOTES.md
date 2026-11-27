@@ -72,3 +72,17 @@ after round 1.
 - Claim code: saved to ~/.config/makefun/make-the-ai-judge-feel-thankful-20261127-1600-submission.json (0600) — never in chat/memory.
 - Blind rounds: no live score/rank until round results publish. R1 cutoff 10:41 WIB 27 Nov; R2 16:41; R3 22:41; final 04:41 WIB 28 Nov. Results due 12 Dec 2026.
 - Note: submit initially refused --prompt-file/--prompt-origin/--prompt-via with --bundle ("a --bundle carries what makefun bundle recorded") — resubmitted without them; the bundle's run record already passed check.
+
+## Round 1 FAILED — run_completes (422), 27 Nov 2026 ~09:48 WIB
+
+- Submission 01a21ad9 REJECTED at round 1: intake checks all passed, but the
+  dev-phase grade run failed — `python3 -P -s /bot/main.py` exited 1.
+- Root cause (reproduced locally as user 65534, read-only /bot, root-owned
+  world-writable /output): `os.chmod(out_dir, 0o755)` in main.py raised
+  `PermissionError: [Errno 1] Operation not permitted` — on the grader
+  /output is writable but NOT owned by the runner, so chmod on the directory
+  fails even though the file itself was written fine (264 bytes on disk).
+- Fix (v2): removed the directory chmod entirely; the file chmod is now
+  guarded with try/except OSError. Entry text unchanged (still 264 chars).
+  Verified: grader-equivalent run (nobody, read-only bot dir, root-owned
+  777 /output, default /output/entry.txt path) exits 0; unit tests pass.
