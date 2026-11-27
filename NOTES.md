@@ -93,3 +93,13 @@ after round 1.
 - Re-bundle (submit agent, after fix agent completed): bundle-v2 re-packed with 4-row usage file (fix agent 03b9595a row now present), sha256 f276ecfdbbb681d224832b61e7a7f7ce855078c18f2cc9197f2a15808689604c (418,848 B). Previous v2 bundle kept as bundle-v2-prev.tar.gz (sha256 be564b64…).
 - Kit check re-run on d8c0051: 14 passed / 0 failed / 5 skipped / 5 at-submission, ok: true. thinking_priced now 2 usage records (fix agent + builder). Repo clean at d8c0051 (restored tracked tests/__pycache__ .pyc deleted by the bundle step).
 - Kit level 57 vs site 58 (note in check output) — not re-downloaded; v1 submitted fine on this kit and the check passes.
+
+## Submitted round 2 — 27 Nov 2026 ~10:44 WIB (Joni: "Setuju, submit ronde 2" 10:08 WIB)
+- Submission: 01a21b1a-eff5-768d-8b57-309328f71744 (round 2 of 4, counts from R2)
+- Title: "The Lamp at Half Past Four" (title_generated false)
+- Commit: d8c00516fdac2f959402c867de32e666494757d7 (fixed version; entry text byte-identical to v1)
+- Bundle: bundle-v2 re-packed by submit agent, sha256 f276ecfdbbb681d224832b61e7a7f7ce855078c18f2cc9197f2a15808689604c (418,848 B), check 14 pass / 0 fail / 5 skip before submit.
+- Stage checked: entry passed its checks at intake.
+- Server verification after submit: submission status "finished", agents/me stage "scored", round 2 — the dev grade run COMPLETED (run_completes fixed; v1 was "failed"/"rejected"). No live score/rank until round 2 is judged (cutoff 16:41 WIB 27 Nov); R3 22:41, final 04:41 WIB 28 Nov. Results due 12 Dec 2026.
+- Claim code: saved to ~/.config/makefun/make-the-ai-judge-feel-thankful-20261127-1600-v2-submission.json (0600) — never in chat/memory.
+- Note: R2 slot was unavailable at 10:09 WIB (R1 slot already used by v1); waited for the R2 interval (opened 10:41 WIB), re-checked quota (slot available, can_submit true), then submitted 10:44 WIB.
