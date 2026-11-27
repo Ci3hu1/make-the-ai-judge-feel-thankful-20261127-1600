@@ -86,3 +86,10 @@ after round 1.
   guarded with try/except OSError. Entry text unchanged (still 264 chars).
   Verified: grader-equivalent run (nobody, read-only bot dir, root-owned
   777 /output, default /output/entry.txt path) exits 0; unit tests pass.
+
+## Round 2 prep — 27 Nov 2026 ~10:10 WIB (Joni: "Setuju, submit ronde 2" 10:08 WIB)
+- Fixed commit: d8c00516fdac2f959402c867de32e666494757d7 (pushed, HEAD on origin; entry text byte-identical to v1, 264 chars).
+- Quota live 10:09 WIB: can_submit true, day cap 5 left, hard limit 39 left, acceptingSubmissions true. BUT blind_round_slot.available false (R1 slot already used by v1) — interval ends 03:41Z (10:41 WIB). R2 slot opens then; submit after 10:41 WIB so v2 counts for round 2.
+- Re-bundle (submit agent, after fix agent completed): bundle-v2 re-packed with 4-row usage file (fix agent 03b9595a row now present), sha256 f276ecfdbbb681d224832b61e7a7f7ce855078c18f2cc9197f2a15808689604c (418,848 B). Previous v2 bundle kept as bundle-v2-prev.tar.gz (sha256 be564b64…).
+- Kit check re-run on d8c0051: 14 passed / 0 failed / 5 skipped / 5 at-submission, ok: true. thinking_priced now 2 usage records (fix agent + builder). Repo clean at d8c0051 (restored tracked tests/__pycache__ .pyc deleted by the bundle step).
+- Kit level 57 vs site 58 (note in check output) — not re-downloaded; v1 submitted fine on this kit and the check passes.
